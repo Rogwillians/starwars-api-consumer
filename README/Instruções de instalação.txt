@@ -1,0 +1,59 @@
+Instruções de Instalação
+Pré-requisitos
+Certifique-se de que você tem os seguintes componentes instalados no seu ambiente de desenvolvimento:
+
+PHP 7.4.33 com suporte ao Apache (ex.: XAMPP, WAMP ou LAMP).
+MySQL para gerenciamento do banco de dados.
+Navegador web para testar a aplicação.
+Conexão à internet para importar o Bootstrap e utilizar a SWAPI.
+
+
+Passo 1: Configuração do Servidor PHP com Apache
+Instale o XAMPP, WAMP (no Windows), configure o LAMP no Linux ou utilize o servidor de sua preferencia.
+Certifique-se de habilitar o Apache e o MySQL durante a instalação.
+Verifique se o PHP está configurado corretamente:
+No terminal ou prompt de comando, execute:
+php -v
+O comando deve retornar a versão instalada do PHP.
+
+
+Passo 2: Configuração do Banco de Dados
+Acesse o phpMyAdmin (geralmente acessível em http://localhost/phpmyadmin) ou seu gerenciador de banco de dados escolhido.
+Crie ou defina um banco de dados para o projeto:
+Nome sugerido: catalogo_filmes
+
+
+Passo 3: Configuração do Projeto
+Copie os arquivos do projeto para o diretório raiz do servidor:
+Local padrão: C:/xampp/htdocs/ (Windows) ou /var/www/html/ (Linux).
+Por exemplo, copie a pasta testePratico para o diretório correspondente.
+Atualize as configurações de conexão ao banco de dados no código:
+
+Abra o arquivo src/Database/request_logs_table.php e ajuste os valores:
+$host = 'localhost';
+$user = 'seu_usuario';
+$password = 'sua_senha';
+$dbName = 'catalogo_filmes';
+Repita o processo no arquivo src/log_request.php
+
+
+Passo 4: Configuração do PHP
+Acesse o arquivo php.ini da sua instalação do PHP.
+Edite o valor do limite de memória
+memory_limit = 1024M
+Reinicie o servidor Apache após realizar alterações.
+
+
+Passo 5: Importação de Bootstrap.
+O Bootstrap e o jQuery estão sendo utilizados diretamente do CDN. Certifique-se de que seu código contém as seguintes referências no HTML:
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+Passo 6: Debug e Logs
+Certifique-se de que os logs de requisições estão sendo gerados corretamente no banco de dados.
+Utilize as ferramentas de debug do navegador (F12) para inspecionar erros no front-end ou nos endpoints.
+

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Star Wars</title>
+    <link rel="stylesheet" href="/testePratico/templates/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+</head>
+<body id="page" data-bs-theme="dark">
+<h1 class="title">STAR WARS catalog</h1>
+<div class="container py-5">
+    <div class="d-flex justify-content-center">
+        <div id="themeToggle" class="theme-toggle dark">
+            <div class="toggle-circle"></div>
+            <i class="bi bi-brightness-high-fill sun"></i>
+            <i class="bi bi-moon-fill moon"></i>
+        </div>
+    </div>
+</div>
+<div class="container" >
+    <div id="films" class="row">
+    </div>
+</div>
+
+<div id="modal" class="modal modal-xl fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button id="closeButton" type="button" class="btn-close right" aria-label="Close"></button>
+            <div id="film-details" class="container-fluid"></div>
+            <div id="character-details" class="container-fluid" style="display: none;"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+    const data = <?php echo json_encode($data); ?>;
+    const list = document.getElementById("films");
+
+    const images = {
+        1: "https://m.media-amazon.com/images/I/91w7BEPqqLL._AC_UF894,1000_QL80_.jpg",
+        2: "https://m.media-amazon.com/images/I/61nFfWio-sL._AC_UF894,1000_QL80_.jpg",
+        3: "https://m.media-amazon.com/images/I/71vSONF6TfL._AC_UF894,1000_QL80_.jpg",
+        4: "https://m.media-amazon.com/images/I/71OnL9mzN4L._AC_UF894,1000_QL80_.jpg",
+        5: "https://m.media-amazon.com/images/I/711xW80aSGL.jpg",
+        6: "https://m.media-amazon.com/images/I/71TLhVyahJL._AC_UF894,1000_QL80_.jpg",
+        7: "https://m.media-amazon.com/images/I/71-oVU7AwVL.jpg",
+        8: "https://m.media-amazon.com/images/I/91O4hc7ndoL._AC_UF1000,1000_QL80_.jpg",
+        9: "https://m.media-amazon.com/images/I/71OhhxJEUBL._AC_UF894,1000_QL80_.jpg",
+    };
+
+    const filmTrailers = {
+        "A New Hope": "https://www.youtube.com/embed/vZ734NWnAHA?si=ZlLAjdnJZqFA-2VX",
+        "The Empire Strikes Back": "https://www.youtube.com/embed/JNwNXF9Y6kY",
+        "Return of the Jedi": "https://www.youtube.com/embed/7L8p7_SLzvU",
+        "The Phantom Menace":"https://www.youtube.com/embed/bD7bpG-zDJQ?si=A7xwSBTBiW0INPTr",
+        "Attack of the Clones":"https://www.youtube.com/embed/gYbW1F_c9eM?si=W2PTLMZHe2Ma8uHi",
+        "Revenge of the Sith":"https://www.youtube.com/embed/5UnjrG_N8hU?si=Qp-lODKYcsw3AcRK",
+        "The Force Awakens":"https://www.youtube.com/embed/sGbxmsDFVnE?si=h9zS7z7I6Pe3BCCd",
+    };
+
+    data.results.forEach(film => {
+
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.style.width = "18rem";
+
+        const img = document.createElement("img");
+        img.src = images[film.episode_id] || "path/to/default-image.jpg";
+        img.classList.add("card-img-top");
+        img.alt = film.title;
+        img.height = 400;
+
+
+        img.addEventListener("click", (event) => {
+            event.preventDefault();
+            displayFilmDetails(film, film.episode_id);
+        });
+        img.setAttribute("data-bs-toggle", "modal");
+        img.setAttribute("data-bs-target", "#modal");
+
+        const cardBody = document.createElement("div");
+        cardBody.classList.add("card-body");
+
+        const cardTitle = document.createElement("h5");
+        cardTitle.classList.add("card-title");
+        cardTitle.textContent = film.title;
+
+        const cardText = document.createElement("p");
+        cardText.classList.add("card-text");
+        cardText.textContent = "Release Date: " + film.release_date;
+
+
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(cardText);
+        card.appendChild(img);
+        card.appendChild(cardBody);
+
+
+        const div = document.createElement("div");
+        div.classList.add("col-4");
+        div.appendChild(card);
+        list.appendChild(div);
+    });
+
+
+</script>
+<script src="/testePratico/public/js/films.js"></script>
