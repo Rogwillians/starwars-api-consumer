@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Client\Pool;
+use Illuminate\Support\Facades\Log;
 
 class SwapiController extends Controller
 {
@@ -55,23 +56,23 @@ class SwapiController extends Controller
 
             $allPools = array_merge(
                 array_map(function ($filmId) {
-                    return ['type' => 'film', 'id' => $filmId];
+                    return ['type' => 'films', 'id' => $filmId];
                 }, $filmIds),
                 array_map(function ($id) {
                     return ['type' => 'species', 'id' => $id];
                 }, $speciesIds),
                 array_map(function ($id) {
-                    return ['type' => 'starship', 'id' => $id];
+                    return ['type' => 'starships', 'id' => $id];
                 }, $starshipIds),
                 array_map(function ($id) {
-                    return ['type' => 'vehicle', 'id' => $id];
+                    return ['type' => 'vehicles', 'id' => $id];
                 }, $vehicleIds),
             );
 
             $responses = Http::pool(function (Pool $pool) use ($allPools) {
                 return array_map(
                     function ($item) use ($pool) {
-                        return $pool->get("https://swapi.py4e.com/api/{$item['type']}s/{$item['id']}/");
+                        return $pool->get("https://swapi.py4e.com/api/{$item['type']}/{$item['id']}/");
                     },
                     $allPools
                 );
