@@ -10,6 +10,7 @@ import VehicleDetails from './Pages/VehicleDetails.jsx';
 import Favorites from './Pages/Favorites';
 import Navbar from './components/Navbar';
 import PeopleList from './pages/PeopleList';
+import PlanetDetails from './pages/PlanetDetails.jsx'
 
 
 function Protected({ children }) {
@@ -34,6 +35,7 @@ export default function App() {
                 <Route path="/species/:id" element={<SpeciesDetails />} />
                 <Route path="/starships/:id" element={<StarshipDetails />} />
                 <Route path="/vehicles/:id" element={<VehicleDetails />} />
+                <Route path="/planets/:id" element={<PlanetDetails />} />
             </Routes>
         </BrowserRouter>
         </AuthProvider>

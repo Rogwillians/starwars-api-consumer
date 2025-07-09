@@ -25,11 +25,11 @@ Route::get('/films/{id}', [App\Http\Controllers\SwapiController::class, 'filmDet
 Route::get('/vehicles/{id}', [App\Http\Controllers\SwapiController::class, 'vehicleDetails']);
 Route::get('/starships/{id}', [App\Http\Controllers\SwapiController::class, 'starshipsDetails']);
 Route::get('/species/{id}', [App\Http\Controllers\SwapiController::class, 'speciesDetails']);
+Route::get('/planets/{id}', [App\Http\Controllers\SwapiController::class, 'planetsDetails']);
 
-
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
-Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
-Route::middleware('auth:sanctum')->get('/me', [AuthController::class, 'me']);
+Route::post('/register', [App\Http\Controllers\AuthController::class, 'register']);
+Route::post('/login', [App\Http\Controllers\AuthController::class, 'login']);
+Route::middleware('auth:sanctum')->post('/logout', [App\Http\Controllers\AuthController::class, 'logout']);
+Route::middleware('auth:sanctum')->get('/me', [App\Http\Controllers\AuthController::class, 'me']);
 
 
