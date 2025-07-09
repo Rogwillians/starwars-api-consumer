@@ -46,14 +46,14 @@ export default function SpeciesDetails() {
                 <div className="flex-1">
                     <h1 className="text-4xl font-bold">{planet.name}</h1>
                     <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-lg">
-                        <div><strong>Classificação:</strong> {planet.rotation_period} cm</div>
-                        <div><strong>Designação:</strong> {planet.orbital_period}</div>
-                        <div><strong>Altura média:</strong> {planet.diameter}</div>
-                        <div><strong>Cores de pele:</strong> {planet.climate}</div>
-                        <div><strong>Cores de cabelo:</strong> {planet.gravity}</div>
-                        <div><strong>Tempo de vida médio:</strong> {planet.terrain}</div>
-                        <div><strong>Tempo de vida médio:</strong> {planet.surface_water}</div>
-                        <div><strong>Tempo de vida médio:</strong> {planet.population}</div>
+                        <div><strong>Tempo de rotação:</strong> {planet.rotation_period} cm</div>
+                        <div><strong>Tempo de orbita:</strong> {planet.orbital_period}</div>
+                        <div><strong>Diametro:</strong> {planet.diameter}</div>
+                        <div><strong>Clima:</strong> {planet.climate}</div>
+                        <div><strong>Gravidade:</strong> {planet.gravity}</div>
+                        <div><strong>Terreno:</strong> {planet.terrain}</div>
+                        <div><strong>Agua na superficie:</strong> {planet.surface_water}</div>
+                        <div><strong>População:</strong> {planet.population}</div>
                     </div>
 
                     <div className="mt-6">

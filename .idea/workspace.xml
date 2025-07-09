@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5018ede-8558-4ba0-b37b-5d9233a14a82" name="Changes" comment="Corrigindo erro de exibição dos links em Detalhes de personagens">
+    <list default="true" id="d5018ede-8558-4ba0-b37b-5d9233a14a82" name="Changes" comment="Adicionando paginas para detalhes de planetas, veiculos, naves e especies">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/app/Http/Controllers/SwapiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/app/Http/Controllers/SwapiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Pages/SpeciesDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Pages/SpeciesDetails.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Pages/StarshipDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Pages/StarshipDetails.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/Pages/VehicleDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Pages/VehicleDetails.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/Pages/PlanetDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/Pages/PlanetDetails.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,6 +177,8 @@
       <workItem from="1751657219459" duration="2910000" />
       <workItem from="1751913104458" duration="818000" />
       <workItem from="1752002198157" duration="10090000" />
+      <workItem from="1752031007293" duration="2440000" />
+      <workItem from="1752081476980" duration="692000" />
     </task>
     <task id="LOCAL-00001" summary="Modificando projeto para utilizar React + Vite, Tailwind e Laravel">
       <option name="closed" value="true" />
@@ -198,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751571858524</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Adicionando paginas para detalhes de planetas, veiculos, naves e especies">
+      <option name="closed" value="true" />
+      <created>1752043621959</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752043621959</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +224,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Modificando projeto para utilizar React + Vite, Tailwind e Laravel" />
     <MESSAGE value="Corrigindo erro de exibição dos links em Detalhes de personagens" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrigindo erro de exibição dos links em Detalhes de personagens" />
+    <MESSAGE value="Adicionando paginas para detalhes de planetas, veiculos, naves e especies" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionando paginas para detalhes de planetas, veiculos, naves e especies" />
   </component>
 </project>
